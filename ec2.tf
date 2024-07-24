@@ -1,6 +1,6 @@
-resource "aws_instance" "instance" {
+resource "aws_instance" "instance1" {
   ami                         = "ami-03972092c42e8c0ca"
-  instance_type               = "t2.small"
+  instance_type               = "t2.micro"
   count                       = 1
   key_name                    = "Onekey"
   vpc_security_group_ids     = ["sg-084466caf0b08812c"]
@@ -9,6 +9,6 @@ resource "aws_instance" "instance" {
   user_data                   = "${file("data.sh")}"
 
   tags = {
-    Name = "instance"
-  }
+    Name = "instance1"
+  }
 }
