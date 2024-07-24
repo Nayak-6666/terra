@@ -1,4 +1,4 @@
-resource "aws_instance" "insta" {
+resource "aws_instance" "instance" {
   ami                         = "ami-03972092c42e8c0ca"
   instance_type               = "t2.small"
   count                       = 1
@@ -9,6 +9,6 @@ resource "aws_instance" "insta" {
   user_data                   = "${file("data.sh")}"
 
   tags = {
-    Name = "insta"
+    Name = "instance"
   }
 }
